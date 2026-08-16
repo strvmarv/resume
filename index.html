@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Paul Marvin — AI Platform & Product Engineer. Résumé.">
+<title>Paul Marvin — Résumé</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+:root{
+  --ink:#1a1a1a; --ink-soft:#3f3f3f; --muted:#8a8a8a; --border:#e6e6e8;
+  --accent:#2563eb; --accent-bg:#eaf1ff;
+  --product:#9a6300; --product-bg:#fdf1da;
+  --platform:#1f7a4c; --platform-bg:#e9f8ee;
+  --core:#6b46c1; --core-bg:#f2eefc;
+  --term-bg:#1e1e2e; --term-text:#cdd6f4; --term-green:#a6e3a1; --term-blue:#89b4fa; --term-purple:#cba6f7;
+}
+*{box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+html,body{margin:0;padding:0;background:#d8d8dc;}
+body{font-family:'Inter',sans-serif;color:var(--ink);}
+
+.page{
+  max-width:8.5in; margin:24px auto; background:#fff;
+  box-shadow:0 4px 24px rgba(0,0,0,0.15);
+}
+
+/* ---- Masthead B: ghost terminal window ---- */
+.mh-titlebar{
+  background:#eceef1; padding:8px 0.6in; display:flex; align-items:center; gap:6px;
+  border-bottom:1px solid #e2e2e2;
+}
+.mh-titlebar .dot{ width:8px; height:8px; border-radius:50%; }
+.mh-titlebar .mh-label{ font-family:'JetBrains Mono',monospace; font-size:9.5px; color:#9a9aa2; margin-left:6px; }
+.mh-body{ padding:20px 0.6in 18px; }
+.mh-body h1{ font-family:'Inter',sans-serif; font-weight:700; font-size:24px; color:var(--ink); margin:0; letter-spacing:-0.01em; }
+.mh-body .role{ font-family:'Inter',sans-serif; color:var(--accent); font-size:13px; font-weight:600; margin-top:2px; }
+.mh-body .contact{ font-family:'JetBrains Mono',monospace; font-size:11px; color:var(--muted); margin-top:10px; }
+.mh-body .contact span{ margin-right:14px; }
+.intro{ padding:0 0.6in 20px; border-bottom:1px solid var(--border); }
+.intro p{ font-size:12.5px; color:var(--ink-soft); line-height:1.6; margin:0; }
+
+/* ---- Top skills chips ---- */
+.chips-band{padding:16px 0.6in 18px; border-bottom:1px solid var(--border);}
+.chips-label{font-size:9.5px; letter-spacing:.09em; text-transform:uppercase; color:var(--muted); font-weight:700; margin-bottom:9px;}
+.chips{display:flex; flex-wrap:wrap; gap:6px;}
+.chip{font-family:'JetBrains Mono',monospace; font-size:10.5px; font-weight:500; padding:4px 10px; border-radius:12px; white-space:nowrap;}
+.chip.ai{background:var(--accent-bg); color:var(--accent);}
+.chip.product{background:var(--product-bg); color:var(--product);}
+.chip.platform{background:var(--platform-bg); color:var(--platform);}
+.chip.core{background:var(--core-bg); color:var(--core);}
+
+/* ---- Section shell ---- */
+.section{padding:22px 0.6in;}
+.section + .section{border-top:1px solid var(--border);}
+.section h2{
+  font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--accent);
+  font-weight:700; margin:0 0 16px;
+}
+
+/* ---- Timeline (experience) ---- */
+.timeline{position:relative; padding-left:24px;}
+.timeline::before{content:'';position:absolute; left:4px; top:6px; bottom:6px; width:2px; background:var(--border);}
+.t-entry{position:relative; margin-bottom:22px; break-inside:avoid; page-break-inside:avoid;}
+.t-entry:last-child{margin-bottom:0;}
+.t-entry::before{content:''; position:absolute; left:-24px; top:5px; width:11px; height:11px; border-radius:50%; background:var(--accent); border:2px solid #fff; box-shadow:0 0 0 1.5px var(--accent);}
+.role-row{display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap;}
+.role-row h3{font-size:14px; font-weight:700; margin:0;}
+.role-row .meta{font-size:11px; color:var(--ink-soft);}
+.date-tag{font-family:'JetBrains Mono',monospace; font-size:10px; font-weight:500; color:var(--accent); background:var(--accent-bg); border-radius:4px; padding:2px 8px; white-space:nowrap;}
+.role-summary{font-size:12px; color:var(--ink-soft); margin:6px 0 8px; line-height:1.6;}
+.sub-head{font-weight:700; font-size:12.5px; margin:12px 0 4px;}
+ul.bullets{margin:6px 0 0; padding-left:18px;}
+ul.bullets li{font-size:12px; color:var(--ink-soft); line-height:1.6; margin-bottom:4px;}
+ul.bullets li:last-child{margin-bottom:0;}
+
+/* ---- Projects ---- */
+.projects-note{font-size:11.5px; color:var(--muted); font-style:italic; margin-bottom:14px;}
+.project{margin-bottom:16px; break-inside:avoid; page-break-inside:avoid;}
+.project:last-child{margin-bottom:0;}
+.project-row{display:flex; align-items:baseline; gap:10px; flex-wrap:wrap;}
+.project-row h3{font-size:13.5px; font-weight:700; margin:0;}
+.project-row .date-tag{background:var(--core-bg); color:var(--core);}
+.project p{font-size:12px; color:var(--ink-soft); line-height:1.6; margin:5px 0 0;}
+.project a{color:var(--accent); font-size:11px; text-decoration:none; font-family:'JetBrains Mono',monospace;}
+
+/* ---- Earlier career ---- */
+.earlier-entry{margin-bottom:10px; font-size:12px; line-height:1.6;}
+.earlier-entry:last-child{margin-bottom:0;}
+.earlier-entry .role{font-weight:700;}
+.earlier-entry .dates{font-family:'JetBrains Mono',monospace; font-size:10.5px; color:var(--muted);}
+.earlier-entry .desc{color:var(--ink-soft);}
+
+/* ---- Full skills index ---- */
+.skills-index dt{font-size:10.5px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; margin-top:10px;}
+.skills-index dt:first-child{margin-top:0;}
+.skills-index dt.ai{color:var(--accent);}
+.skills-index dt.product{color:var(--product);}
+.skills-index dt.platform{color:var(--platform);}
+.skills-index dt.core{color:var(--core);}
+.skills-index dd{font-size:11.5px; color:var(--ink-soft); margin:2px 0 0; line-height:1.5;}
+
+@media print{
+  html,body{background:#fff;}
+  .page{margin:0; box-shadow:none; max-width:none;}
+  .section{padding:16px 0.55in;}
+  .mh-titlebar{padding:6px 0.55in;}
+  .mh-body{padding:16px 0.55in 18px;}
+  .chips-band{padding:14px 0.55in 16px;}
+}
+@page{ size:letter; margin:0; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="mh-titlebar">
+      <span class="dot" style="background:#ee6a5f"></span>
+      <span class="dot" style="background:#f5bd4f"></span>
+      <span class="dot" style="background:#61c454"></span>
+      <span class="mh-label">resume — zsh</span>
+    </div>
+    <div class="mh-body">
+      <h1>Paul Marvin</h1>
+      <div class="role">AI Platform &amp; Product Engineer</div>
+      <div class="contact">
+        <span>Kansas City, MO</span><span>strvmarv@gmail.com</span><span>linkedin.com/in/paulmarvin</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="intro">
+    <p>AI platform and product engineer who ships end-to-end — from retrieval and agentic infrastructure to the full products built on top of it. 10+ years across databases, SRE, and cloud platforms — including 6 years leading engineering teams before returning to hands-on building — now applied to shipping dependable LLM systems and the products people actually use.</p>
+  </div>
+
+  <div class="chips-band">
+    <div class="chips-label">Top Skills</div>
+    <div class="chips">
+      <span class="chip ai">RAG</span>
+      <span class="chip ai">Agentic Pipelines</span>
+      <span class="chip ai">LLM Cost Engineering</span>
+      <span class="chip product">0&rarr;1 Product Development</span>
+      <span class="chip product">Full-Stack Delivery</span>
+      <span class="chip product">Data Privacy &amp; Encryption</span>
+      <span class="chip platform">AWS Bedrock</span>
+      <span class="chip platform">Kubernetes</span>
+      <span class="chip platform">PostgreSQL/pgvector</span>
+      <span class="chip core">C# / .NET</span>
+      <span class="chip core">Rust</span>
+      <span class="chip core">UI/UX</span>
+    </div>
+  </div>
+
+  <section class="section">
+    <h2>Experience</h2>
+    <div class="timeline">
+
+      <div class="t-entry">
+        <div class="role-row"><h3>Platform &amp; AI Engineering — Radancy</h3><span class="date-tag">Oct 2025 – Present</span></div>
+        <div class="meta">Remote (New York, US)</div>
+        <p class="role-summary">Run an internal AI platform for engineering — retrieval-augmented generation, agentic automation, and LLM tooling on AWS Bedrock, Kubernetes, and PostgreSQL/pgvector, in .NET and React.</p>
+        <ul class="bullets">
+          <li>Built RAG infrastructure indexing 400,000+ code chunks across 60,000+ repository files from multiple Git providers — the retrieval backbone behind internal AI assistants' code search.</li>
+          <li>Designed multi-stage agentic pipelines that triage, enrich, and route work items autonomously. Rollout is staged — simulation, read-only, then read-write — with per-stage confidence gating; automation has to prove itself against real data before it can write to production.</li>
+          <li>Shipped a Model Context Protocol (MCP) server giving AI coding assistants governed access to internal issue-tracking and documentation systems, working in Claude Code, VS Code Copilot, and Cursor. Distributed through an internal plugin marketplace.</li>
+          <li>Own LLM cost engineering for the platform: token budgets per workload, provider-level spend caps, inference alarms, and automated model-pricing sync.</li>
+          <li>Put AI governance in place: immutable audit trails, fail-closed PII redaction, role-based access control, encrypted-at-rest secret handling, and evaluation runs comparing output fidelity before and after prompt or model changes.</li>
+          <li>Also handle platform reliability alongside the AI work: production operations, GitOps delivery, infrastructure-as-code, and OpenTelemetry observability across AWS and Kubernetes. 5,000+ automated tests and staged release validation gate everything that ships.</li>
+        </ul>
+      </div>
+
+      <div class="t-entry">
+        <div class="role-row"><h3>Software Engineering Manager — Radancy</h3><span class="date-tag">Oct 2022 – Sep 2025</span></div>
+        <ul class="bullets">
+          <li>Designed and supported platform infrastructure for core customer-facing products, across distributed engineering teams in the US and Vienna.</li>
+          <li>Managed 13 engineers across 3 teams spanning the US and Vienna.</li>
+          <li>Stood up a new engineering team of 6 in Vienna from scratch, including its foundational platform architecture and tooling.</li>
+          <li>Set technical strategy for core search and retrieval infrastructure serving high-traffic customer-facing systems.</li>
+          <li>Extended SRE practices to the core public product — previously only the newer services had them.</li>
+          <li>Brought observability tooling into the platform and drove its adoption across engineering.</li>
+        </ul>
+      </div>
+
+      <div class="t-entry">
+        <div class="role-row"><h3>Manager Digital Technology — Yellow</h3><span class="date-tag">May 2021 – Oct 2022</span></div>
+        <div class="meta">Overland Park, KS</div>
+        <ul class="bullets">
+          <li>Set platform and infrastructure standards for an engineering org of 50+ across 4 globally distributed Scrum teams.</li>
+          <li>Introduced goal-setting practices and delivery tooling the teams lacked.</li>
+          <li>Resolved technical bottlenecks that were really organizational — mismatches between what engineering was executing and what the business actually needed.</li>
+          <li>Coached and mentored engineers at every level, growing the team's own technical bench instead of leaning on outside help.</li>
+        </ul>
+      </div>
+
+      <div class="t-entry">
+        <div class="role-row"><h3>Software Engineering Manager — symplr</h3><span class="date-tag">Apr 2019 – May 2021</span></div>
+        <div class="meta">Overland Park, KS</div>
+        <ul class="bullets">
+          <li>Turned around a $22M+ platform initiative that had struggled for years — delivered successfully in 4 months by applying Agile methods and systematic technical triage.</li>
+          <li>Provided technical leadership across 50+ engineers on 10+ Scrum teams in 4 countries, driving platform architecture decisions.</li>
+          <li>Rebuilt working relationships between Engineering, Product Management, DevOps, and IT that the platform initiative depended on.</li>
+          <li>Rolled out empirical delivery metrics and forecasting so leadership could see engineering progress and capacity without asking.</li>
+          <li>Coordinated technology strategy across engineering and architecture groups to keep the platform from fragmenting into duplicate efforts.</li>
+        </ul>
+      </div>
+
+      <div class="t-entry">
+        <div class="role-row"><h3>Senior Software Developer — Stackify</h3><span class="date-tag">Apr 2015 – Apr 2019</span></div>
+        <div class="meta">Leawood, KS · startup</div>
+        <div class="sub-head">Site Reliability Engineering</div>
+        <p class="role-summary">Stood up the company's first SRE function (team of 4 remote engineers) focused on production health, reliability, and client trust.</p>
+        <ul class="bullets">
+          <li>Took ownership of 17 Elasticsearch clusters (9 production, 8 test) and built the on-call processes and runbooks that didn't exist yet.</li>
+          <li>Set up a bi-weekly release train and migrated CI/CD infrastructure to Azure DevOps with first-class Kubernetes and Docker support.</li>
+          <li>Contributed to resilient streaming architecture design using Azure, Kubernetes, Kafka, and C#.</li>
+        </ul>
+        <div class="sub-head">Developer Tooling &amp; Platform</div>
+        <p class="role-summary">Led a team of 4 maintaining core client-side developer tools, including Prefix and a C++ profiler; managed delivery of a cross-platform .NET Core profiler (Linux/Windows) to beta.</p>
+        <div class="sub-head">Platform Infrastructure &amp; Data</div>
+        <p class="role-summary">Took ownership of 2,000+ Azure SQL databases as the platform scaled, improving efficiency 30%+ and cutting costs 20%+. Designed a high-volume JSON log interception layer to Azure Blob Storage for daily log export across Azure, AWS, and Rackspace. Led triage and RCA for major Azure platform outages.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Projects</h2>
+    <p class="projects-note">Solo-built, full stack — design, backend, frontend, and operations — end to end.</p>
+
+    <div class="project">
+      <div class="project-row"><h3>zoid</h3><span class="date-tag">2026 – Present</span></div>
+      <p>Terminal-based (TUI) coding agent in Rust that treats context as a visible, first-class resource instead of a mystery meter that silently compacts and forgets. MCP tool integration, pluggable model providers, extensible skill sets. <a href="https://strvmarv.github.io">strvmarv.github.io</a></p>
+    </div>
+    <div class="project">
+      <div class="project-row"><h3>total-recall</h3><span class="date-tag">2026 – Present</span></div>
+      <p>Open-source, multi-tiered memory and knowledge base for terminal coding agents (Claude Code, Copilot CLI, Cursor, Cline, OpenCode, Hermes) via MCP. Local SQLite + on-device embeddings, tiered pinned/hot/warm/cold storage with automatic compaction, and a retrieval-quality eval harness. <a href="https://github.com/strvmarv/total-recall">github.com/strvmarv/total-recall</a></p>
+    </div>
+    <div class="project">
+      <div class="project-row"><h3>bkith</h3><span class="date-tag">2026</span></div>
+      <p>AI companion product with persistent, tiered memory: encrypted conversation archive, narrative-summary compaction (prose over structured data for context fidelity), and permanent "anchor" memories for what shouldn't decay. Built a proactive engagement engine that decides when to reach out based on relationship state, web + Telegram interfaces (including a "bring your own bot" mode), and an OpenAI-compatible API endpoint. Per-user AES-256 envelope encryption for data-at-rest privacy and cryptographic deletion.</p>
+    </div>
+    <div class="project">
+      <div class="project-row"><h3>thkiln</h3><span class="date-tag">2026</span></div>
+      <p>Full-lifecycle AI engineering platform: connect a repo and specialized agents scan, scope, implement, review, deploy, and verify changes end-to-end. Designed a multi-agent pipeline (Product, Architect, Designer, Security, Planner, Coder, Reviewer) with conditional per-agent execution and an escalation pattern that re-scopes failed implementations through broader-context agents instead of blind retries. Benchmarked 6+ LLMs on cost/quality tradeoffs for autonomous coding workflows.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Earlier Career</h2>
+    <div class="earlier-entry">
+      <span class="role">Software Developer, Cactus Software</span> <span class="dates">(2014–2015)</span> —
+      <span class="desc">C#/.NET web applications and services, ASP.NET MVC/Web API, microservices for a medical software platform.</span>
+    </div>
+    <div class="earlier-entry">
+      <span class="role">Software Developer/Analyst, Andrews McMeel Universal</span> <span class="dates">(2011–2014)</span> —
+      <span class="desc">Full-lifecycle development of web and desktop business applications; database design and architecture.</span>
+    </div>
+    <div class="earlier-entry">
+      <span class="role">Deployment/QA Analyst, Certified Trainer, Cactus Software</span> <span class="dates">(2006–2011)</span> —
+      <span class="desc">Systems administration, WiX packaging, SQL/Oracle DBA, SharePoint administration, QA automation.</span>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Skills</h2>
+    <dl class="skills-index">
+      <dt class="ai">AI / LLM</dt>
+      <dd>Retrieval-Augmented Generation (RAG), Agentic Pipelines, Prompt Engineering, LLM Cost Engineering, AI Governance &amp; Guardrails, Model Context Protocol (MCP), Vector Databases / Embeddings, Evaluation Harnesses</dd>
+      <dt class="product">Product Engineering</dt>
+      <dd>0&rarr;1 Product Development, Full-Stack Delivery (Design &rarr; Backend &rarr; Frontend &rarr; Ops), API Design, Multi-Surface Delivery (Web, Telegram, CLI/TUI), Data Privacy &amp; Encryption (AES-256 Envelope Encryption)</dd>
+      <dt class="platform">Platform / Cloud</dt>
+      <dd>AWS Bedrock, AWS, Azure, Google Cloud, Kubernetes, Docker, PostgreSQL/pgvector, Elasticsearch, GitOps, OpenTelemetry, DevOps</dd>
+      <dt class="core">Core Engineering</dt>
+      <dd>C# / .NET, Angular, NodeJS/NestJS, SQL, MongoDB, HTML/JS/CSS, Rust, UI/UX, Git</dd>
+    </dl>
+  </section>
+
+</div>
+</body>
+</html>
